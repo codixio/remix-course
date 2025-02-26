@@ -4,7 +4,7 @@ import { useFetcher, useActionData } from '@remix-run/react';
 
 function NewNote() {
   const fetcher = useFetcher<{ message?: string }>();
-  const data = fetcher.data as { message?: string };
+  const data = fetcher.data;
   const isSubmitting = fetcher.state === 'submitting';
 
   return (
