@@ -1,4 +1,5 @@
-import styles from './NewNote.css';
+import { MIMEType } from 'node:util';
+import styles from './NewNote.css?url';
 import { useFetcher, useActionData } from '@remix-run/react';
 
 function NewNote() {

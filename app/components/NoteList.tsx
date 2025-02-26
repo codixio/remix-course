@@ -1,9 +1,13 @@
-import styles from './NoteList.css';
+import styles from './NoteList.css?url';
 import { NoteType } from '../data/note_type';
 
 interface NoteListProps {
   notes_list: NoteType[];
 }
+
+NoteList.defaultProps = {
+  notes_list: [],
+};
 
 function NoteList({ notes_list }: NoteListProps) {
   return (
