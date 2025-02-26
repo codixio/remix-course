@@ -21,7 +21,10 @@ export async function loader() {
   return notes;
 }
 
-export async function action({ request }: ActionFunctionArgs) {
+export async function action({
+  request,
+}: ActionFunctionArgs) {
+
   const formData = await request.formData();
 
   const noteData = {
@@ -31,7 +34,7 @@ export async function action({ request }: ActionFunctionArgs) {
   } as NoteType;
 
   if (noteData.title.trim().length < 5) {
-    return { message: 'Title must be at least 5 characters long' };
+    return { message: `Title must be at least 5 characters long` };
   }
 
   const existingNotes = await getStoredNotes();

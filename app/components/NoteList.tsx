@@ -5,10 +5,6 @@ interface NoteListProps {
   notes_list: NoteType[];
 }
 
-NoteList.defaultProps = {
-  notes_list: [],
-};
-
 function NoteList({ notes_list }: NoteListProps) {
   return (
     <ul id="note-list">
