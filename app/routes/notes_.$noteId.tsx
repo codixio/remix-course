@@ -18,7 +18,7 @@ export default function NoteDetailsPage() {
   );
 }
 
-export async function action({
+export async function loader({
   params,
 }: ActionFunctionArgs) {
   const notes = await getStoredNotes();
