@@ -48,8 +48,8 @@ export function ErrorBoundary() {
   if (isRouteErrorResponse(error)) {
     if (error.status === 200) {
       return (
-        <main>
-          <p className="info-message">{error.data}</p>
+        <main className="info">
+          <p>{error.data}</p>
         </main>
       );
     }

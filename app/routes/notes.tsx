@@ -47,6 +47,16 @@ export async function action({
   return redirect('/notes');
 }
 
+export const meta = () => [
+  {
+    title: "All Notes"
+  },
+  {
+      name: "description",
+      content: "Manage your notes with ease"
+  },
+];
+
 export function ErrorBoundary() {
   const error = useRouteError();
   const response = error as Response;
@@ -54,9 +64,9 @@ export function ErrorBoundary() {
   if (isRouteErrorResponse(error)) {
     if (error.status === 200) {
       return (
-        <main>
+        <main className="info">
           <NewNote />
-          <p className="info-message">{error.data}</p>
+          <p>{error.data}</p>
         </main>
       );
     }
@@ -90,6 +100,5 @@ export function ErrorBoundary() {
 }
 
 export function links() {
-  debugger;
   return [...newNoteLinks(), ...noteListLinks()];
 }
